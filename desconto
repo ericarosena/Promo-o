@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Livros - 70% OFF</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h1 {
+    color: #2a984f;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #173821;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #204d2d;
+}
+
+.hidden {
+    display: none;
+}
+
+.warning {
+    color: red;
+}
+
+ul {
+    text-align: left;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TELA 1: Promoção -->
+    <div id="promo">
+        <h1> Livros com até 70% de desconto!</h1>
+        <p>Cadastre-se para liberar sua promoção exclusiva.</p>
+
+        <form onsubmit="mostrarGolpe(event)">
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="text" placeholder="CPF" required>
+            <input type="password" placeholder="Senha" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- TELA 2: Golpe -->
+    <div id="golpe" class="hidden">
+        <h1 class="warning"> Carregandos seus dados...</h1>
+             
+
+        </ul>
+    </div>
+
+</div>
+
+<script>
+function mostrarGolpe(event) {
+    event.preventDefault(); // impede envio real
+    document.getElementById("promo").classList.add("hidden");
+    document.getElementById("golpe").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
